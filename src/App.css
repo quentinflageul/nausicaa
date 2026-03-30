@@ -46,6 +46,12 @@
   color: var(--color-text);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
@@ -64,6 +70,55 @@
 
 .nav-links a:hover {
   color: var(--color-gold);
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.language-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.language-label.is-active {
+  color: var(--color-text);
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.language-button:focus,
+.language-button:focus-visible,
+.language-button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.language-button:hover .language-label,
+.language-button:focus-visible .language-label {
+  color: var(--color-gold);
+}
+
+.language-flag {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  object-fit: contain;
 }
 
 /* ---- Hero ---- */
@@ -214,17 +269,28 @@
 /* ---- Silk Section ---- */
 
 .silk-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
   padding: 8rem 4rem;
-  text-align: center;
   background: var(--color-bg);
 }
 
-.silk-content {
-  max-width: 620px;
-  margin: 0 auto;
+.silk-panel-inner {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
 }
 
-.silk-section h2 {
+.silk-panel-text {
+  flex: 1;
+  padding: 2rem 4rem 2rem 0;
+  text-align: right;
+}
+
+.silk-panel-text h2 {
   font-family: var(--font-serif);
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 300;
@@ -232,6 +298,21 @@
   letter-spacing: 0.04em;
   color: var(--color-text);
   margin: 0 0 2.5rem;
+}
+
+.silk-panel-image {
+  flex: 0 0 33.333%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.silk-panel-image img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
 }
 
 .silk-description {
@@ -300,6 +381,10 @@
     padding: 1.2rem 2rem;
   }
 
+  .nav-right {
+    gap: 0.75rem;
+  }
+
   .nav-links {
     display: none;
   }
@@ -350,7 +435,30 @@
   }
 
   .silk-section {
-    padding: 5rem 2rem;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .silk-panel-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .silk-panel-text {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .silk-panel-image {
+    flex: none;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .silk-panel-image img {
+    width: 50%;
+    max-width: 220px;
   }
 
   .features {
