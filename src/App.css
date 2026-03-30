@@ -1,38 +1,364 @@
+/* =========================================
+   Nausicaa — Landing Page Styles
+   ========================================= */
+
+:root {
+  --color-bg: #fdfbf8;
+  --color-bg-warm: #f8f4ef;
+  --color-text: #2c2420;
+  --color-text-light: #7a6e65;
+  --color-gold: #c9a84c;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Outfit', 'Helvetica Neue', sans-serif;
+}
+
+/* ---- Reset & Base ---- */
+
 .App {
-  text-align: center;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ---- Navigation ---- */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 4rem;
+  background: rgba(253, 251, 248, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-brand {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text);
 }
 
-.App-header {
-  background-color: #282c34;
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-gold);
+}
+
+/* ---- Hero ---- */
+
+.hero {
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 8rem 4rem 4rem;
+  gap: 2rem;
+  background: var(--color-bg);
+  position: relative;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-content {
+  flex: 0 0 380px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin: 0 0 1.5rem;
+  line-height: 1.05;
+}
+
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  line-height: 1.9;
+  color: var(--color-text-light);
+  margin: 0 0 2.5rem;
+  max-width: 340px;
+  text-align: center;
+}
+
+.hero-cta {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-decoration: none;
+  border: 1px solid var(--color-gold);
+  padding: 1rem 2.5rem;
+  transition: all 0.4s ease;
+}
+
+.hero-cta:hover {
+  background: var(--color-gold);
+  color: #fff;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- Logo Panel ---- */
+
+.logo-panel {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 70vh;
+  padding: 6rem 4rem;
+  background: var(--color-bg-warm);
 }
 
-.App-link {
-  color: #61dafb;
+.logo-panel-inner {
+  display: flex;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo-panel-image {
+  flex: 0 0 33.333%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.logo-panel-image img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  filter: drop-shadow(0 4px 24px rgba(201, 168, 76, 0.15));
+}
+
+.logo-panel-text {
+  flex: 1;
+  padding: 2rem 4rem 2rem 4rem;
+}
+
+.logo-panel-text h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  margin: 0 0 2rem;
+}
+
+.logo-panel-text p {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--color-text-light);
+  margin: 0 0 1.2rem;
+}
+
+/* ---- Silk Section ---- */
+
+.silk-section {
+  padding: 8rem 4rem;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.silk-content {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.silk-section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  margin: 0 0 2.5rem;
+}
+
+.silk-description {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--color-text-light);
+  margin: 0 0 0.8rem;
+}
+
+/* ---- Features ---- */
+
+.features {
+  display: flex;
+  padding: 6rem 4rem;
+  gap: 3rem;
+  background: var(--color-bg-warm);
+}
+
+.feature {
+  flex: 1;
+  text-align: center;
+  padding: 2rem;
+}
+
+.feature h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+}
+
+.feature p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+/* ---- Footer ---- */
+
+.footer {
+  padding: 2rem 4rem;
+  text-align: center;
+  background: var(--color-bg-warm);
+}
+
+.footer-copy {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 1.2rem 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 7rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+  }
+
+  .logo-panel {
+    flex-direction: column;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .logo-panel-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-panel-image {
+    flex: none;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .logo-panel-image img {
+    width: 50%;
+    max-width: 220px;
+  }
+
+  .logo-panel-text {
+    padding: 0 1rem;
+  }
+
+  .silk-section {
+    padding: 5rem 2rem;
+  }
+
+  .features {
+    flex-direction: column;
+    padding: 3rem 2rem;
+  }
+
+  .footer {
+    padding: 4rem 2rem 2rem;
   }
 }
