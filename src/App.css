@@ -79,15 +79,13 @@
 
 .language-label {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 300;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-text-light);
-}
-
-.language-label.is-active {
-  color: var(--color-text);
+  transition: color 0.3s ease;
+  padding-left: 0.1rem;
 }
 
 .language-button {
@@ -280,7 +278,7 @@
 .silk-panel-inner {
   display: flex;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1000px;
   width: 100%;
 }
 

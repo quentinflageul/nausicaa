@@ -128,7 +128,7 @@ function App() {
               title={nextLanguageLabel}
             >
               <img src={currentLanguageFlag} alt="" className="language-flag" />
-              <span className="language-label is-active">{currentLanguageLabel}</span>
+              <span className="language-label">{currentLanguageLabel}</span>
             </button>
           </div>
         </div>
