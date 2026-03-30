@@ -7,7 +7,7 @@
   --color-bg-warm: #f8f4ef;
   --color-text: #2c2420;
   --color-text-light: #7a6e65;
-  --color-gold: #c9a84c;
+  --color-gold: #DFAE42;  /*c9a84c*/
   --font-serif: 'Cormorant Garamond', 'Georgia', serif;
   --font-sans: 'Outfit', 'Helvetica Neue', sans-serif;
 }
@@ -84,9 +84,10 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .hero-content {
@@ -140,15 +141,14 @@
 }
 
 .hero-image-wrapper {
-  flex: 1;
+  flex: 0 1 700px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .hero-image {
-  width: 80%;
-  max-width: 900px;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
