@@ -10,7 +10,7 @@ function App() {
         <span className="nav-brand">Nausicaa</span>
         <div className="nav-links">
           <a href="#collection">Collection</a>
-          <a href="#silk">Our Silk</a>
+          <a href="#silk">The Silk</a>
           <a href="#story">Our Story</a>
         </div>
       </nav>
